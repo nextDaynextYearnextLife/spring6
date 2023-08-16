@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--p space-->
+    <bean id="s4" class="com.zyh.iocxml.DiMap.Student" p:sid="03" p:sname="diva"
+    p:lessList-ref="lessList" p:teacherMap-ref="TeacherMap"
+    ></bean>
+
+
+    <!--util-->
+    <bean id="l1" class="com.zyh.iocxml.DiMap.Lesson">
+        <property name="lessname" value="Spring"></property>
+    </bean>
+    <bean id="l2" class="com.zyh.iocxml.DiMap.Lesson">
+        <property name="lessname" value="html"></property>
+    </bean>
+
+    <bean id="t1" class="com.zyh.iocxml.DiMap.Teacher">
+        <property name="tname" value="zyc"></property>
+        <property name="tid" value="01"></property>
+    </bean>
+    <bean id="t2" class="com.zyh.iocxml.DiMap.Teacher">
+        <property name="tname" value="zyz"></property>
+        <property name="tid" value="02"></property>
+    </bean>
+
+    <bean id="s1" class="com.zyh.iocxml.DiMap.Student">
+        <property name="sname" value="zs"></property>
+        <property name="sid" value="01"></property>
+        <!--jion list and map-->
+        <property name="lessList" ref="lessList"></property>
+        <property name="teacherMap" ref="TeacherMap"></property>
+    </bean>
+
+    <util:list id="lessList">
+        <ref bean="l1"></ref>
+        <ref bean="l2"></ref>
+    </util:list>
+
+    <util:map id="TeacherMap">
+        <entry>
+            <key>
+                <value>01</value>
+            </key>
+            <ref bean="t1"></ref>
+        </entry>
+        <entry>
+            <key>
+                <value>02</value>
+            </key>
+            <ref bean="t2"></ref>
+        </entry>
+    </util:map>
+
+
+</beans>

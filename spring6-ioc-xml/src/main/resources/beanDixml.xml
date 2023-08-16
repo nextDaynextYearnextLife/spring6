@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--set-->
+    <bean id="book" class="com.zyh.iocxml.Di.Book">
+        <property name="author" value="zyh"></property>
+        <property name="bname" value="spring1"></property>
+<!--        <property name="others">-->
+<!--            <null></null>-->
+<!--        </property>-->
+<!--        <property name="others" value="&lt;&lt;"></property>-->
+            <property name="others">
+                <value>
+                    <![CDATA[a>b]]>
+                </value>
+            </property>
+    </bean>
+    
+
+    <!--constructor -->
+    <bean id="bookCon" class="com.zyh.iocxml.Di.Book">
+        <constructor-arg name="bname" value="javaC"></constructor-arg>
+        <constructor-arg name="author" value="zyh"></constructor-arg>
+    </bean>
+
+
+</beans>

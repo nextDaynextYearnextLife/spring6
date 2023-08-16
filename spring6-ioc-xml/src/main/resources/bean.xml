@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--getBean -->
+    <bean id="user" class="com.zyh.iocxml.User"></bean>
+
+    <!--get inteface-->
+    <bean id="UserDao" class="com.zyh.iocxml.bean.UserDaoImpl"></bean>
+
+    <bean id="PersonDao" class="com.zyh.iocxml.bean.PersonDaoImp"></bean>
+
+
+
+</beans>
